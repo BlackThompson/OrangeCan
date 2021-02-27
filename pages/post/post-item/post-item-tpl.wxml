@@ -1,19 +1,27 @@
 <template name="postItemTpl">
-<view class="post-container">
-      <view class="post-author-date">
-        <image src="{{avatar}}" />
-        <text>{{date}} </text>
-      </view>
-      <text class="post-title">{{title}}</text>
-      <image class="post-image" src="{{postImg}}" mode="widthFix" />
-      <text class="post-content">{{content}}</text>
-      <view class="post-like">
-        <image src="/images/icon/wx_app_collect.jpeg" />
+  <view class="post-container">
+    <view class="post-author-date">
+      <image src="{{avatar}}" />
+      <text>{{date}} </text>
+    </view>
+    <text class="post-title">{{title}}</text>
+    <image class="post-image" src="{{postImg}}" mode="widthFix" />
+    <text class="post-content">{{content}}</text>
+    <!-- <view class="post-like">
+        <image src="/images/icon/" />
         <text>{{collectionNum}}</text>
         <image src="/images/icon/wx_app_view.jpeg" />
         <text>{{readingNum}}</text>
         <image src="/images/icon/wx_app_message.jpeg" />
         <text>{{icommentNum}}</text>
-      </view>
-    </view>  
-  </template>
+      </view> -->
+    <view class="post-like">
+      <image src="/images/icon/wx_app_collect.png" />
+      <text>{{collectionNum}}</text>
+      <image src="/images/icon/wx_app_view.png"></image>
+      <text>{{readingNum}}</text>
+      <image src="/images/icon/wx_app_message.png"></image>
+      <text>{{commentNum}}</text>
+    </view>
+  </view>
+</template>

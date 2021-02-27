@@ -1,27 +1,24 @@
-import{DBPost}from'../../db/DBPost.js';
+const { DBPost } = require("../../../db/DBPost");
 
+// pages/post/post-detail/post-detail.js
 Page({
 
   /**
    * 页面的初始数据
    */
-  data: {},
+  data: {
+
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var dbPost = new DBPost();
+    var postId = options.id;
+    this.dbPost = new DBPost(postId);
+    this.postData = this.dbPost.getPostItemByld().data;
     this.setData({
-      postList: dbPost.getAllPostData()
-    });
-  },
-
-  onTapToDetail(event){
-    var postId = event.currentTarget.dataset.postId;
-    console.log(postId);
-    wx.navigateTo({
-      url: 'post-detail/post-detail?id='+ postId,
+      post:this.postData
     })
   },
 

@@ -64,7 +64,14 @@
       "list": []
     },
     "miniprogram": {
-      "list": []
+      "list": [
+        {
+          "name": "文本页",
+          "pathName": "pages/post/post-detail/post-detail",
+          "query": "id=2",
+          "scene": null
+        }
+      ]
     }
   }
 }

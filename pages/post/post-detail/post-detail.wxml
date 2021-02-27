@@ -1,0 +1,13 @@
+<!--pages/post/post-detail/post-detail.wxml-->
+<view class="container">
+  <image class="head-image" src="{{post.postId}}"></image>
+  <text class="title">{{post.title}}</text>
+  <view class="author-date">
+    <view class="author-box">
+      <image class="avatar" src="{{post.avatar}}"></image>
+      <text class="author">{{post.author}}</text>
+    </view>
+    <text class="date">{{post.dataTime}}</text>
+  </view>
+  <text class="detail">{{post.detail}}</text>
+</view>
