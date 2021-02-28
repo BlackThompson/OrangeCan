@@ -1,0 +1,113 @@
+.comment-detail-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow-y: hidden;
+}
+
+.comment-main-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 100rpx;
+  right: 0;
+  overflow-y: auto;
+}
+
+.comment-item {
+  margin: 20rpx 0 20rpx 24rpx;
+  padding: 24rpx 24rpx 24rpx 0;
+  border-bottom: 1rpx solid #f2e7e1;
+}
+
+.comment-item:last-child {
+  border-bottom: none;
+}
+
+.comment-title {
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  color: #212121;
+  border-bottom: 1px solid #ccc;
+  margin-left: 24rpx;
+  padding: 8rpx 0;
+  font-family: Microsoft YaHei;
+}
+
+.comment-item-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.comment-item-header .left-img image {
+  height: 80rpx;
+  width: 80rpx;
+}
+
+.comment-item-header .right-user {
+  margin-left: 30rpx;
+  line-height: 80rpx;
+}
+
+.comment-item-header .right-user text {
+  font-size: 26rpx;
+  color: #212121;
+}
+
+.comment-body {
+  font-size: 26rpx;
+  line-height: 26rpx;
+  color: #666;
+  padding: 10rpx 0;
+}
+
+.comment-txt text {
+  line-height: 50rpx;
+}
+
+.comment-txt text {
+  line-height: 50rpx;
+}
+
+.comment-img {
+  margin: 10rpx 0;
+}
+
+.comment-img image {
+  max-width: 32%;
+  margin-right: 10rpx;
+  height: 220rpx;
+  width: 220rpx;
+}
+
+.comment-vioce-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 200rpx;
+  height: 64rpx;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 6rpx;
+}
+
+.comment-vioce-item.voice-play {
+  height: 64rpx;
+  width: 64rpx;
+}
+
+.comment-voice-item text {
+  margin-left: 60rpx;
+  color: #212121;
+  font-size: 22rpx;
+}
+
+.comment-time {
+  margin-top: 10rpx;
+  color: #ccc;
+  font-size: 24rpx;
+}

@@ -70,6 +70,12 @@
           "pathName": "pages/post/post-detail/post-detail",
           "query": "id=2",
           "scene": null
+        },
+        {
+          "name": "文本导航页",
+          "pathName": "pages/post/post",
+          "query": "id=2",
+          "scene": null
         }
       ]
     }

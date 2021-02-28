@@ -1,6 +1,6 @@
 <!--pages/post/post-detail/post-detail.wxml-->
 <view class="container">
-  <image class="head-image" src="{{post.postId}}"></image>
+  <image class="head-image" src="{{post.postImg}}"></image>
   <text class="title">{{post.title}}</text>
   <view class="author-date">
     <view class="author-box">
@@ -11,3 +11,21 @@
   </view>
   <text class="detail">{{post.detail}}</text>
 </view>
+
+<view class="tool">
+  <view class="tool-item" catchtap="onUpTap" data-post-id="{{post.postId}}">
+    <image wx:if="{{post.upStatus}}" src="/images/icon/wx_app_liked.png"/>
+    <image wx:else src="/images/icon/wx_app_like.png" />
+    <text>{{post.upNum}}</text>
+  </view>
+  <view class="tool-item" catchtap="onCommentTap" data-post-id="{{post.postId}}">
+    <image src="/images/icon/wx_app_message.png"/>
+    <text>{{post.commentNum}}</text>
+  </view>
+  <view class="tool-item" catchtap="onCollectionTap" data-post-id="{{post.postId}}">
+  <image wx:if="{{post.collectionStatus}}"src="/images/icon/wx_app_collected.png"/>
+  <image wx:else src="/images/icon/wx_app_collect.png"/>
+  <text>{{post.collectionNum}}</text>
+</view>
+</view>
+

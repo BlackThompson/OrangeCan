@@ -1,4 +1,6 @@
-const { DBPost } = require("../../../db/DBPost");
+const {
+  DBPost
+} = require("../../../db/DBPost");
 
 // pages/post/post-detail/post-detail.js
 Page({
@@ -16,9 +18,9 @@ Page({
   onLoad: function (options) {
     var postId = options.id;
     this.dbPost = new DBPost(postId);
-    this.postData = this.dbPost.getPostItemByld().data;
+    this.postData = this.dbPost.getPostItemById().data;
     this.setData({
-      post:this.postData
+      post: this.postData
     })
   },
 
@@ -26,7 +28,9 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    wx.setNavigationBarTitle({
+      title: this.postData.title
+    })
   },
 
   /**
@@ -69,5 +73,40 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  onCollectionTap: function (event) {
+    //dbPost对象已经在onLoad函数里被保存到了this变量中，无需再次实例化
+    var newData = this.dbPost.collect();
+
+    //重新绑定数据。注意，不要将整个newData全部作为setData的参数，应当有选择地更新部分数据
+    this.setData({
+      'post.collectionStatus': newData.collectionStatus,
+      'post.collectionNum': newData.collectionNum
+    })
+
+    //Interactive feedback
+    wx.showToast({
+      title: newData.collectionStatus ? "star" : "unstar",
+      duration: 1000,
+      icon: "success",
+      mask: true
+    })
+  },
+
+  onUpTap: function (event) {
+    var newData = this.dbPost.up();
+
+    this.setData({
+      'post.upStatus': newData.upStatus,
+      'post.upNum': newData.upNum
+    })
+  },
+
+  onCommentTap: function (event) {
+    var id = event.currentTarget.dataset.postId;
+    wx.navigateTo({
+      url: '../post-comment/post-comment?id=' + id
+    })
   }
 })
