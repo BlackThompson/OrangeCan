@@ -14,3 +14,4 @@ A brief description of what this project does and who it's for
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
 
 - `Hello World!`
+- `Hello World!`
